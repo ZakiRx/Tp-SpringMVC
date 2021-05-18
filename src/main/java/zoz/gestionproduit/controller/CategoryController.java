@@ -18,15 +18,15 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import zoz.gestionproduit.model.Category;
 import zoz.gestionproduit.model.Produit;
-import zoz.gestionproduit.service.CategoryService;
-import zoz.gestionproduit.service.ProduitService;
+import zoz.gestionproduit.service.CategoryServiceImp;
+import zoz.gestionproduit.service.ProduitServiceImp;
 
 @RestController
 @RequestMapping("/api/category")
 public class CategoryController {
 	
 	@Autowired
-	private CategoryService categoryService;
+	private CategoryServiceImp categoryService;
 	
 	
 	

@@ -12,15 +12,15 @@ import zoz.gestionproduit.dao.jpa.CategoryDaoJpa;
 import zoz.gestionproduit.dao.jpa.ProduitDaoJpa;
 import zoz.gestionproduit.model.Category;
 import zoz.gestionproduit.model.Produit;
-import zoz.gestionproduit.service.CategoryService;
-import zoz.gestionproduit.service.ProduitService;
+import zoz.gestionproduit.service.CategoryServiceImp;
+import zoz.gestionproduit.service.ProduitServiceImp;
 
 public class GestionProduitSpringApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext applicationContext=  SpringApplication.run(BeansConfig.class,args);
 		
-		ProduitService produitService = applicationContext.getBean("produitService",ProduitService.class);
+		ProduitServiceImp produitService = applicationContext.getBean("produitService",ProduitServiceImp.class);
 		
 		produitService.addProduit(new Produit(null,"produit1","desc1",15223.0));
 		produitService.addProduit(new Produit(null,"produit2","desc2",15223.0));
@@ -41,7 +41,7 @@ public class GestionProduitSpringApplication {
 		
 		System.out.println("*******Category Service***********");
 		
-		CategoryService categoryService = applicationContext.getBean("categoryService",CategoryService.class);
+		CategoryServiceImp categoryService = applicationContext.getBean("categoryService",CategoryServiceImp.class);
 		
 		categoryService.addCategory(new Category(null,"category1"));
 		categoryService.addCategory(new Category(null,"category2"));

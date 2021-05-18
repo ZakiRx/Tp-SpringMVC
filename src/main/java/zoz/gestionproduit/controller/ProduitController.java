@@ -3,6 +3,7 @@ package zoz.gestionproduit.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,13 +20,16 @@ import org.springframework.web.servlet.view.RedirectView;
 import zoz.gestionproduit.model.Category;
 import zoz.gestionproduit.model.Produit;
 import zoz.gestionproduit.service.CategoryService;
+import zoz.gestionproduit.service.CategoryServiceImp;
 import zoz.gestionproduit.service.ProduitService;
+import zoz.gestionproduit.service.ProduitServiceImp;
 
 @Controller
 @RequestMapping("/produit")
 public class ProduitController {
 
 	@Autowired
+	@Qualifier("produitService")
 	private ProduitService produitService;
 	@Autowired
 	private CategoryService categoryService;
